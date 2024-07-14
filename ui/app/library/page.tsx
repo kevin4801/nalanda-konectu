@@ -2,7 +2,7 @@
 
 import DeleteChat from '@/components/DeleteChat';
 import { formatTimeDifference } from '@/lib/utils';
-import { BookOpenText, ClockIcon, Delete, ScanEye } from 'lucide-react';
+import { BookOpenText, ClockIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -38,7 +38,7 @@ const Page = () => {
   }, []);
 
   return loading ? (
-    <div className="flex flex-row items-center justify-center min-h-screen">
+    <div className="flex flex-row items-center justify-center min-h-screen bg-dark-200">
       <svg
         aria-hidden="true"
         className="w-8 h-8 text-light-200 fill-light-secondary dark:text-[#202020] animate-spin dark:fill-[#ffffff3b]"
@@ -57,7 +57,7 @@ const Page = () => {
       </svg>
     </div>
   ) : (
-    <div>
+    <div className="bg-dark-200 min-h-screen">
       <div className="fixed z-40 top-0 left-0 right-0 lg:pl-[104px] lg:pr-6 lg:px-8 px-4 py-4 lg:py-6 border-b border-light-200 dark:border-dark-200">
         <div className="flex flex-row items-center space-x-2 max-w-screen-lg lg:mx-auto">
           <BookOpenText />

@@ -38,6 +38,11 @@ services:
       - perplexica-backend
     ports:
       - 3000:3000
+    volumes:
+      - C:/Users/dipes/OneDrive/Desktop/Perplexica/ui:/home/perplexica
+    environment:
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: 'true'
     networks:
       - perplexica-network
     restart: unless-stopped

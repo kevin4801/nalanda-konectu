@@ -1,10 +1,11 @@
+// tailwind.config.js
 import type { Config } from 'tailwindcss';
 import type { DefaultColors } from 'tailwindcss/types/generated/colors';
 
 const themeDark = (colors: DefaultColors) => ({
-  50: '#0a0a0a',
-  100: '#111111',
-  200: '#1c1c1c',
+  50: '#161921',
+  100: '#1f2937',
+  200: '#1f2937',
 });
 
 const themeLight = (colors: DefaultColors) => ({
@@ -22,12 +23,10 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      borderColor: ({ colors }) => {
-        return {
-          light: themeLight(colors),
-          dark: themeDark(colors),
-        };
-      },
+      borderColor: ({ colors }) => ({
+        light: themeLight(colors),
+        dark: themeDark(colors),
+      }),
       colors: ({ colors }) => {
         const colorsDark = themeDark(colors);
         const colorsLight = themeLight(colors);
@@ -49,4 +48,5 @@ const config: Config = {
   },
   plugins: [require('@tailwindcss/typography')],
 };
+
 export default config;
