@@ -32,8 +32,8 @@ services:
       context: .
       dockerfile: app.dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=http://18.208.214.104:3001/api  # Use private IP for internal communication
-        - NEXT_PUBLIC_WS_URL=ws://18.208.214.104:3001
+        - NEXT_PUBLIC_API_URL=http://172.31.41.218:3001/api  # Use private IP for internal communication
+        - NEXT_PUBLIC_WS_URL=ws://172.31.41.218:3001
     depends_on:
       - perplexica-backend
     ports:
