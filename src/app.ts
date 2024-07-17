@@ -11,25 +11,22 @@ const port = getPort();
 const app = express();
 const server = http.createServer(app);
 
-// CORS configuration
 const corsOptions = {
-  origin: 'http://34.207.105.195', // Replace with your frontend URL or '*'
+  origin: 'http://34.207.105.195', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Authorization', 'Content-Type', 'X-Requested-With'], // Allowed headers
 };
 
-// Middleware
-app.use(cors(corsOptions)); // Enable CORS with specified options
-app.use(express.json()); // Parse JSON request bodies
+app.use(cors(corsOptions));
+app.use(express.json());
 
-// Routes
-app.use('/api', routes); // Mount API routes
+app.use('/api', routes);
 app.get('/api', (_, res) => {
-  res.status(200).json({ status: 'ok' }); // Example endpoint response
+  res.status(200).json({ status: 'ok' });
 });
 
-// Start server
 server.listen(port, () => {
   logger.info(`Server is running on port ${port}`);
 });
 
-// Start WebSocket server
 startWebSocketServer(server);
