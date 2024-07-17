@@ -12,9 +12,9 @@ const app = express();
 const server = http.createServer(app);
 
 const corsOptions = {
-  origin: 'http://34.207.105.195', // Replace with your frontend URL
-  methods: ['GET', 'POST', 'OPTIONS'], // Allowed HTTP methods
-  allowedHeaders: ['Authorization', 'Content-Type', 'X-Requested-With'], // Allowed headers
+  origin: 'http://34.207.105.195:3000',  // Adjust with your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 app.use(cors(corsOptions));
