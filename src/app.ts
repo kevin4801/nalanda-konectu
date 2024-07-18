@@ -11,13 +11,13 @@ const port = getPort();
 const app = express();
 const server = http.createServer(app);
 
-// Define CORS options to allow requests from your frontend
 const corsOptions = {
-  origin: 'http://34.207.105.195', // Replace with your frontend URL
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: 'http://34.207.105.195',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
 };
 
-app.use(cors(corsOptions)); // Apply CORS middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api', routes);
