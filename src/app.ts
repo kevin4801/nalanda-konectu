@@ -19,7 +19,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type'], // Specify allowed headers
 }));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api', routes);
