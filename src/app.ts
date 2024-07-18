@@ -11,11 +11,13 @@ const port = getPort();
 const app = express();
 const server = http.createServer(app);
 
-const corsOptions = {
-  origin: 'http://34.207.105.195',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-};
+
+// Set up CORS middleware
+app.use(cors({
+  origin: 'http://34.207.105.195:3000', // Replace with your actual frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+  allowedHeaders: ['Content-Type'], // Specify allowed headers
+}));
 
 app.use(cors(corsOptions));
 app.use(express.json());
