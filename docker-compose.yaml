@@ -34,8 +34,8 @@ services:
       context: .
       dockerfile: app.dockerfile
       args:
-        - NEXT_PUBLIC_API_URL=http://34.207.105.195:3001/api
-        - NEXT_PUBLIC_WS_URL=ws://34.207.105.195:3001
+        - NEXT_PUBLIC_API_URL=http://172.31.41.218:3001/api
+        - NEXT_PUBLIC_WS_URL=ws://172.31.41.218:3001
     depends_on:
       - perplexica-backend
     ports:
